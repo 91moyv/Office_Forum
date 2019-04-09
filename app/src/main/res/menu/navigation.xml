@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home1"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_follow"
+        android:icon="@drawable/guanzhu"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/templet"
+        android:title="素材"
+        android:icon="@drawable/templet1"/>
+    <item
+        android:id="@+id/navigation_mine"
+        android:icon="@drawable/mine1"
+        android:title="@string/title_notifications" ></item>
+
+</menu>
