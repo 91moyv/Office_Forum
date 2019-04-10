@@ -1,15 +1,9 @@
 package com.example.office_forum;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
-
 
 
 public class MainActivity extends BaseStatusBarActivity {
@@ -33,7 +27,7 @@ public class MainActivity extends BaseStatusBarActivity {
                 case R.id.navigation_follow:
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container,new FollowFragment())
+                            .replace(R.id.fragment_container,new CurriculumFragment())
                             .commit();
                     return true;
                 case R.id.templet:

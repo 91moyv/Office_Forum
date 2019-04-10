@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#fff</color>
     <color name="colorAccent">#56CA5A</color>
     <color name="colorfont">#353535</color>
+    <color name="login_normal_color">#E6E6E6</color>
+    <color name="white">#FFFFFF</color>
 </resources>
