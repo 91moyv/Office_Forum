@@ -12,6 +12,10 @@
         android:title="@string/title_dashboard" />
 
     <item
+        android:id="@+id/navigation_skill"
+        android:title="小技巧"
+        android:icon="@drawable/skil_iconl"/>
+    <item
         android:id="@+id/templet"
         android:title="素材"
         android:icon="@drawable/templet1"/>

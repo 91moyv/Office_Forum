@@ -5,13 +5,14 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".Fragment.HomeFragment">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
+        android:elevation="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,7 +21,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/bt_start_send"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="37dp"
@@ -28,9 +29,11 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="8dp"
+            android:gravity="center"
             android:background="@drawable/round_button"
             android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:text="搜帖子/博主/素材"
+            android:text="  搜帖子/博主/素材"
+            android:textAlignment="center"
             android:textColor="#838383"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
@@ -73,24 +76,29 @@
         android:id="@+id/post_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        android:background="#fff"
+        app:tabMode="scrollable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout9"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+
+        app:tabTextAppearance="@style/TabLayoutTextStyle">
 
 
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/post_viewpager"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_navigation" />
+        app:layout_constraintTop_toBottomOf="@+id/post_navigation"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
