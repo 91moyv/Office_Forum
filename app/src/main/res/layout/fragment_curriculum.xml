@@ -239,7 +239,7 @@
                     app:layout_constraintVertical_bias="0.0">
 
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView2"
+                        android:id="@+id/word_video"
                         android:layout_width="160dp"
                         android:layout_height="110dp"
 
@@ -339,10 +339,9 @@
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout12">
 
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView"
+                        android:id="@+id/excel_video"
                         android:layout_width="160dp"
                         android:layout_height="110dp"
-                        android:layout_marginTop="8dp"
                         app:cardCornerRadius="5dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -439,6 +438,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
 
                     <android.support.v7.widget.CardView
+                        android:id="@+id/ps_video"
                         android:layout_width="160dp"
                         android:layout_height="110dp"
                         app:cardCornerRadius="5dp"

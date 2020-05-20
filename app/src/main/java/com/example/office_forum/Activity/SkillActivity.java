@@ -8,6 +8,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ import java.util.List;
 public class SkillActivity extends AppCompatActivity {
     private List<SkillEntity> list = new ArrayList<>();
   ImageView mImageView;
+  Button mButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,13 @@ public class SkillActivity extends AppCompatActivity {
                 .diskCacheStrategy(DiskCacheStrategy.RESOURCE);
         Glide.with(this).load(R.drawable.word_skill_01).apply(options).into(mImageView);
 
-*/
+*/      mButton=findViewById(R.id.bt_skill_return);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         initView();
         initData();
     }

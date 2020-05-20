@@ -45,10 +45,15 @@ public class Word_Post_Adapter extends BaseAdapter {
         TextView post_content=convertView.findViewById(R.id.post_content);
         TextView post_username=convertView.findViewById(R.id.post_username);
         TextView post_date=convertView.findViewById(R.id.post_date);
+        TextView url=convertView.findViewById(R.id.tx_qrcode_url);
         post_title.setText(list.get(position).getPost_title());
         post_content.setText(list.get(position).getPost_content());
         post_username.setText(list.get(position).getPost_username());
         post_date.setText(list.get(position).getCreatedAt());
+        if(list.get(position).getReward()!=null){
+            url.setText(list.get(position).getReward().getFileUrl());
+        }
+
         return convertView;
     }
 }

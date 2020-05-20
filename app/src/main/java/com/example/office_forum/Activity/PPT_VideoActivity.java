@@ -86,7 +86,7 @@ public class PPT_VideoActivity extends BaseStatusBarActivity {
         mJZVideoPlayerStandard.heightRatio = 16;*/
         //将缩略图的scaleType设置为FIT_XY（图片全屏）
         mJZVideoPlayerStandard.thumbImageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        mJZVideoPlayerStandard.setUp("http://10.50.43.4/PPT/videos/PPT01.mp4", JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,"1 如何安装PPT2013");
+        mJZVideoPlayerStandard.setUp("https://yeek.top/officeS/PPT/videos/PPT01.mp4", JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,"1 如何安装PPT2013");
         //设置容器内播放器高,解决黑边（视频全屏）
        /*JZVideoPlayer.setVideoImageDisplayType(JZVideoPlayer.VIDEO_IMAGE_DISPLAY_TYPE_FILL_PARENT);*/
         mVideo_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

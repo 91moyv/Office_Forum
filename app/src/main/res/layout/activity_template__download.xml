@@ -21,6 +21,7 @@
             android:id="@+id/template_download_return"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginStart="8dp"
             android:background="@drawable/ic_arrow_back_black_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -120,25 +121,25 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout5"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
-                    android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView15">
+                    app:layout_constraintTop_toBottomOf="@+id/imageView15"
+                    app:layout_constraintVertical_bias="0.94">
 
                     <Button
                         android:id="@+id/button23"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@color/white"
                         android:text="1809人下载" />

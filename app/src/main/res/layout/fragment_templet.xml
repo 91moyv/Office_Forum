@@ -28,7 +28,7 @@
                 android:layout_height="200dp"
                 android:layout_margin="20dp"
                 app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/cardView2"
+                app:layout_constraintBottom_toTopOf="@+id/word_video"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -107,7 +107,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardView2"
+                android:id="@+id/word_video"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
 
@@ -196,7 +196,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                app:layout_constraintTop_toBottomOf="@+id/word_video">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"

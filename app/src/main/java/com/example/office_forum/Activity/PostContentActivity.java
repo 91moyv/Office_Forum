@@ -8,8 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ import com.cpiz.android.bubbleview.BubbleStyle;
 import com.cpiz.android.bubbleview.BubbleTextView;
 import com.cpiz.android.bubbleview.RelativePos;
 import com.example.office_forum.BaseStatusBarActivity;
+import com.example.office_forum.QRcode_ppwindow;
 import com.example.office_forum.R;
 import com.example.office_forum.TransApi.TransAPI;
 import com.example.office_forum.TransApi.TranslateBD;
@@ -27,6 +30,7 @@ import com.google.gson.Gson;
 import com.zyao89.view.zloading.ZLoadingDialog;
 import com.zyao89.view.zloading.Z_TYPE;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,6 +41,12 @@ public class PostContentActivity extends BaseStatusBarActivity {
     private TextView mUserName;
     private TextView mDate;
     private Button mReturn;
+    private Button mBtReWard;
+
+    private Spinner mSpinner;
+
+    private List<String> List_Sort;
+    private ArrayAdapter<String> adapter;
     private Handler handler = new Handler();
     private Switch mTrans;
     String post_content;
@@ -69,14 +79,29 @@ public class PostContentActivity extends BaseStatusBarActivity {
          post_content=intent.getStringExtra("post_content");
         String post_username=intent.getStringExtra("post_username");
         String post_date=intent.getStringExtra("post_date");
+        final String ImagesUrl=intent.getStringExtra("ImagesUrl");
         mTrans=findViewById(R.id.trans);
+        mBtReWard=findViewById(R.id.bt_reword);
         mReturn=findViewById(R.id.post_content_return);
         mTrans.setVisibility(mTrans.INVISIBLE);
+        mSpinner=findViewById(R.id.spinner_comment);
         mTitle=findViewById(R.id.post_content_title);
         mContent=findViewById(R.id.post_content_content);
         mUserName=findViewById(R.id.post_content_username);
+
         mDate=findViewById(R.id.post_content_date);
     /*    mBubbleTextSample=findViewById(R.id.bubble_text_sample);*/
+        List_Sort = new ArrayList<String>();
+        List_Sort.add("按时间倒序");
+        List_Sort.add("按时间正序");
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,List_Sort);
+
+        //为适配器设置下拉列表下拉时的菜单样式。
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //为spinner绑定我们定义好的数据适配器
+        mSpinner.setAdapter(adapter);
+
         mTitle.setText(post_title);
         mContent.setText(post_content);
         mUserName.setText(post_username);
@@ -101,7 +126,16 @@ public class PostContentActivity extends BaseStatusBarActivity {
             }
         });
 
-
+        mBtReWard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ImagesUrl.length()<10){
+                    Toast.makeText(PostContentActivity.this,"作者没有上传二维码！",Toast.LENGTH_SHORT).show();
+                }else {
+                    new QRcode_ppwindow(PostContentActivity.this, ImagesUrl).showAtBottom(mBtReWard);
+                }
+            }
+        });
     }
     @Override
     protected void onDestroy() {
@@ -119,7 +153,7 @@ public class PostContentActivity extends BaseStatusBarActivity {
                 num++;
             }
         }
-                if (num>string.length()*0.3) {
+                if (num>string.length()*0.1) {
 
 
 
@@ -171,9 +205,7 @@ public class PostContentActivity extends BaseStatusBarActivity {
     }
 
     private void toTrans2(String inText, final ZLoadingDialog dialog){
-
         final String query = inText;
-//                final String query = "我爱你\n你爱我吗";
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -195,11 +227,8 @@ public class PostContentActivity extends BaseStatusBarActivity {
 
                             dialog.dismiss();
                         }
-
-
-                    }
+}
                 });
-
             }
         }).start();
 

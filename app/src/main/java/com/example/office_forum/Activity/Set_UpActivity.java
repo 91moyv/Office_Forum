@@ -51,7 +51,7 @@ public class Set_UpActivity extends BaseStatusBarActivity {
         mShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Glide.with(Set_UpActivity.this).asBitmap().load("https://yeek.top/officeS/PS/images/001.jpg").into(new SimpleTarget<Bitmap>() {
+                Glide.with(Set_UpActivity.this).asBitmap().load(R.mipmap.ic_newicon01).into(new SimpleTarget<Bitmap>() {
                     /**
                      * 成功的回调
                      */
@@ -60,8 +60,8 @@ public class Set_UpActivity extends BaseStatusBarActivity {
                         // 下面这句代码是一个过度dialog，因为是获取网络图片，需要等待时间
 
                         // 调用方法
-                        WxShareUtils.shareWeb(Set_UpActivity.this, "你的appId",
-                                "网页url", "网页标题", "网页描述",
+                        WxShareUtils.shareWeb(Set_UpActivity.this, "wx216cb4f8b560590b",
+                                "https://linchen.pro/officeS", "善用officeS", "一款学习office的APP",
                                 bitmap);
                     }
 
@@ -73,8 +73,9 @@ public class Set_UpActivity extends BaseStatusBarActivity {
                         super.onLoadFailed(errorDrawable);
 
 
-                        WxShareUtils.shareWeb(Set_UpActivity.this, "你的appId",
-                                "网页url", "网页标题", "网页描述",
+                        WxShareUtils.shareWeb(Set_UpActivity.this, "wx216cb4f8b560590b",
+                                "https://linchen.pro/officeS", "善用officeS", "一款学习office的APP"
+                                ,
                                 null);
                     }
                 });

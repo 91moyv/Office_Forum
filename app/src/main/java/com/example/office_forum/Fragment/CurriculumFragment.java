@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.office_forum.Activity.PPT_VideoActivity;
 import com.example.office_forum.R;
@@ -27,6 +28,9 @@ public class CurriculumFragment extends Fragment {
     private Banner mBanner_Class;
     private List<Integer> mimages = new ArrayList<>();
     private View mPPT_Video;
+    private View mWord_Video;
+    private View mPS_Video;
+    private View mExcel_Video;
     public CurriculumFragment() {
         // Required empty public constructor
     }
@@ -39,6 +43,9 @@ public class CurriculumFragment extends Fragment {
       View view= inflater.inflate(R.layout.fragment_curriculum, container, false);
         mBanner_Class=view.findViewById(R.id.banner_class);
         mPPT_Video=view.findViewById(R.id.ppt_video);
+        mWord_Video=view.findViewById(R.id.word_video);
+        mPS_Video=view.findViewById(R.id.ps_video);
+        mExcel_Video=view.findViewById(R.id.excel_video);
         mimages.add(R.drawable.banner2);
         mimages.add(R.drawable.banner3);
         mimages.add(R.drawable.banner1);
@@ -55,6 +62,24 @@ public class CurriculumFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), PPT_VideoActivity.class));
+            }
+        });
+        mWord_Video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"不更了，word视频在下一个app里见",Toast.LENGTH_SHORT).show();
+            }
+        });
+        mExcel_Video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"不更了，Excel视频在下一个app里见",Toast.LENGTH_SHORT).show();
+            }
+        });
+        mPS_Video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"不更了，PS视频在下一个app里见",Toast.LENGTH_SHORT).show();
             }
         });
       return view;

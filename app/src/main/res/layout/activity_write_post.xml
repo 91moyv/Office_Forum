@@ -194,6 +194,53 @@
 
 
                         <android.support.constraint.ConstraintLayout
+                            android:id="@+id/upload_qrcode"
+                            android:layout_width="match_parent"
+                            android:clickable="true"
+                            android:background="@drawable/selection_effect"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:id="@+id/qrcode_tx"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="上传打赏二维码"
+                                android:textColor="@color/colorfont"
+                                android:textSize="18sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/wp_qrcode"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.48000002"
+                                app:srcCompat="@drawable/images_ewm" />
+                        </android.support.constraint.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/textView48"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/xian" />
+
+                        <android.support.constraint.ConstraintLayout
                             android:id="@+id/help_block"
                             android:layout_width="match_parent"
                             android:layout_height="80dp"

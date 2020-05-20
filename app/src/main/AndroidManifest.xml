@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.office_forum"
     tools:ignore="MissingLeanbackLauncher">
+
     <!-- 允许联网 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取wifi网络状态的信息 -->
@@ -19,10 +20,15 @@
         android:roundIcon="@mipmap/ic_newicon01_foreground"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".wxapi.WXEntryActivity"
+        <service
+            android:name=".CountDownService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
             android:exported="true"
-            android:launchMode="singleTop"
-            ></activity>
+            android:launchMode="singleTop" />
         <activity android:name=".Activity.PS_TemplateActivity" />
         <activity android:name=".Activity.SearchActivity" />
         <activity android:name=".Activity.Template_DownloadActivity" />
@@ -88,8 +94,6 @@
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
             android:authorities="com.example.office_forum.BmobContentProvider" />
-
-
     </application>
 
 </manifest>

@@ -54,7 +54,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_skill_return"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"

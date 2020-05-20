@@ -1,11 +1,13 @@
 package com.example.office_forum.Post_Date;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobFile;
 
 public class Word_Post_Data extends BmobObject {
     private String post_username;
     private String post_content;
     private String post_title;
+    private BmobFile reward;
 
     public String getPost_username(){
         return post_username;
@@ -29,5 +31,13 @@ public class Word_Post_Data extends BmobObject {
 
     public void setPost_username(String post_username) {
         this.post_username = post_username;
+    }
+
+    public BmobFile getReward() {
+        return reward;
+    }
+
+    public void setReward(BmobFile reward) {
+        this.reward = reward;
     }
 }

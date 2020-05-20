@@ -2,6 +2,8 @@ package com.example.office_forum;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -50,10 +52,35 @@ public class PS_Template_Adapter extends BaseAdapter {
 
         final ImageView imageView1=convertView.findViewById(R.id.ps_item_images1);
         final ImageView imageView2=convertView.findViewById(R.id.ps_item_images2);
-        Glide.with(context).load(list.get(position).getImages1())
-                .into(imageView1);
-        Glide.with(context).load(list.get(position).getImages2())
-                .into(imageView2);
+        final Handler mHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                switch (msg.what) {
+                    case 0:
+
+                        Glide.with(context).load(list.get(position).getImages1())
+
+                                .into(imageView1);
+                        Glide.with(context).load(list.get(position).getImages2())
+                                .into(imageView2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+               /* Glide.with(context).load(list.get(position).getImages1())
+                        .into(imageView1);
+                Glide.with(context).load(list.get(position).getImages2())
+                        .into(imageView2);*/
+               Message msg = new Message();
+                mHandler.sendMessage(msg);
+            }
+        }).start();
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

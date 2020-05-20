@@ -50,7 +50,7 @@ public class Exercises_Adapter extends BaseAdapter {
         convertView = inflater.inflate(R.layout.exercises_item, null);
         TextView title=convertView.findViewById(R.id.ex_title);
         RadioGroup radioGroup=convertView.findViewById(R.id.radio_option);
-        RadioButton opA=convertView.findViewById(R.id.op_a);
+        final RadioButton opA=convertView.findViewById(R.id.op_a);
         RadioButton opB=convertView.findViewById(R.id.op_b);
         RadioButton opC=convertView.findViewById(R.id.op_c);
         RadioButton opD=convertView.findViewById(R.id.op_d);
@@ -68,6 +68,7 @@ public class Exercises_Adapter extends BaseAdapter {
                 if(checkedId==R.id.op_a){
                     answer.set(position,"A");
                 }
+
                 if(checkedId==R.id.op_b){
                     answer.set(position,"B");
                 }
